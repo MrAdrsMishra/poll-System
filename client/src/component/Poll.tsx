@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { PollType } from "./PollPage";
 import axios from "axios";
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_BASE_URL;
 
 const Poll = ({ pollId }: { pollId: string }) => {
     const [hasVoted, setHasVoted] = useState<boolean>(false);

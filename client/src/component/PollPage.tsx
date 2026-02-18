@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Poll from "./Poll";
 import axios from "axios";
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_BASE_URL;
 
 export type PollType = {
     id: string;
