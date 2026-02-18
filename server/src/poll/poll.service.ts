@@ -74,6 +74,10 @@ export class PollService implements OnModuleInit {
     clientToken: string,
     userHash: string
   ) {
+    if (!clientToken) {
+      throw new BadRequestException('Client token is required');
+    }
+
     const poll = await this.pollRepository.findOneBy({ id: pollId });
     if (!poll) {
       throw new NotFoundException('Poll not found');
