@@ -3,12 +3,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PollModule } from './poll/poll.module';
 import { DatabaseModule } from './database/database.module';
-import Redis from 'ioredis';
- 
+
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PollModule, DatabaseModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    PollModule,
+    DatabaseModule
+  ],
   controllers: [AppController],
-  providers: [AppService, Redis],
+  providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
