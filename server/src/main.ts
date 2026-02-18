@@ -7,7 +7,7 @@ async function bootstrap() {
   app.enableCors(
     {
       // for postman
-      origin:["https://apius.reqbin.com","http://localhost:5173","https://poll-room.netlify.app/","*"],
+      origin:["https://apius.reqbin.com","http://localhost:5173","https://poll-room.netlify.app"],
       credentials:true
     }
   )
