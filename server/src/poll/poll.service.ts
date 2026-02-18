@@ -57,7 +57,6 @@ export class PollService implements OnModuleInit {
 
     return this.pollRepository.save(poll);
   }
-
   getAllPolls() {
     // query builder for valid till
     const queryBuilder = this.pollRepository.createQueryBuilder('poll');

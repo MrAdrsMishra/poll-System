@@ -14,7 +14,7 @@ const Poll = ({ pollId }: { pollId: string }) => {
         const loadPoll = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`${API_URL}/poll/${pollId}`);
+                const response = await axios.get(`${API_URL}/poll/${pollId}`,{withCredentials:true});
                 setPollData(response.data);
             } catch (error) {
                 console.error("Error loading poll:", error);

@@ -37,7 +37,7 @@ const PollForm = () => {
                 statement: statement.trim(),
                 options: validOptions,
                 validTill: new Date(validTill),
-            });
+            },{withCredentials:true});
             console.log(response.data);
             setMessage("Poll created successfully");
             setStatement("");

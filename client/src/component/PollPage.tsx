@@ -24,6 +24,7 @@ const PollPage = () => {
                 const response = await axios.get(`${API_URL}/poll/get-polls`, {
                     withCredentials: true,
                 });
+                // console.log(response)
                 setPollList(response.data);
 
                 if (response.data.length > 0) {
@@ -50,7 +51,7 @@ const PollPage = () => {
     return (
         <div className=" w-full h-full flex flex-col md:flex-row justify-around border border-gray-300 p-10 overflow-x-hidden">
             {/* Left Side - Poll List */}
-            <div className="min-w-[400px] h-auto space-y-4 overflow-auto overflow-x-hidden  ">
+            <div className="min-w-100 h-auto space-y-4 overflow-auto overflow-x-hidden  ">
                 <Link to="/create" className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4">
                     + Create Poll
                 </Link>
